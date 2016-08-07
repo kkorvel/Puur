@@ -11,25 +11,25 @@ class Example(QtGui.QWidget):
         
     def initUI(self):
         
-        title = QtGui.QLabel('First part')
-        author = QtGui.QLabel('Second part')
-        review = QtGui.QLabel('Correct order')
+        firstpart = QtGui.QLabel('First part')
+        secondpart = QtGui.QLabel('Second part')
+        correctorder = QtGui.QLabel('Correct order')
 
-        titleEdit = QtGui.QTextEdit()
-        authorEdit = QtGui.QTextEdit()
-        reviewEdit = QtGui.QTextEdit()
+        firstEdit = QtGui.QTextEdit()
+        secondEdit = QtGui.QTextEdit()
+        orderEdit = QtGui.QTextEdit()
 
         grid = QtGui.QGridLayout()
         grid.setSpacing(10)
 
-        grid.addWidget(title, 1, 0)
-        grid.addWidget(titleEdit, 1, 1)
+        grid.addWidget(firstpart, 1, 0)
+        grid.addWidget(firstEdit, 1, 1)
 
-        grid.addWidget(author, 2, 0)
-        grid.addWidget(authorEdit, 2, 1)
+        grid.addWidget(secondpart, 2, 0)
+        grid.addWidget(secondEdit, 2, 1)
 
-        grid.addWidget(review, 3, 0)
-        grid.addWidget(reviewEdit, 3, 1, 5, 1)
+        grid.addWidget(correctorder, 3, 0)
+        grid.addWidget(orderEdit, 3, 1, 5, 1)
         
         self.setLayout(grid) 
         
