@@ -1,17 +1,26 @@
+import signal
+import sys
+#from PyMata.pymata import PyMata
+from PyQt4.QtGui import QApplication, QMainWindow, QPushButton,QVBoxLayout, QWidget, QTextEdit
+app = QApplication([])
 
-def function(file):
-    lines = []
-    for line in f:
+mainwindow = QMainWindow()
+mainwindow.setWindowTitle("Puuri koordinaadid")
 
-        lines.append(line)
-    return lines
+vbox = QVBoxLayout()
+vbox.addStretch(1)
 
-with open("drill.ngc", "r") as f:
-    content = function(f)
-    print(content)
+textedit = QTextEdit("box 1")
+textedit2 = QTextEdit("box 2")
 
-def extract(file):
-    for line in f:
-        if line == "X":
-            coordinates.append(line_split(''))
-            return coordinates
+
+vbox.addWidget(textedit)
+vbox.addWidget(textedit2)
+# This is some silly Qt-ism
+container = QWidget()
+container.setLayout(vbox)
+mainwindow.setCentralWidget(container)
+mainwindow.show()
+
+
+sys.exit(app.exec_()) # This is basically infinite loop here, it blocks everything else!
