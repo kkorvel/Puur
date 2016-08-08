@@ -27,11 +27,19 @@ mainwindow.show()
 
 
 def convert_handler(convert):
-	value = textedit2.value()
+	value = textedit2.toPlainText()
+	#print(value)
+	sendList = value.split()
+	#print(sendList)
+	reversedList = sendList[::-1]
+	#print(reversedList)
+	correctList = ' '.join(reversedList)
+	print(correctList)
 	
     
 
 
 button_convert.clicked.connect(convert_handler)
+
 
 sys.exit(app.exec_()) # This is basically infinite loop here, it blocks everything else!
