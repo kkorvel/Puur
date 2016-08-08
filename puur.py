@@ -30,11 +30,13 @@ def convert_handler(convert):
 	value = textedit2.toPlainText()
 	#print(value)
 	sendList = value.split()
-	#print(sendList)
-	reversedList = sendList[::-1]
+	#for index in sendList:
+	sendList[0:2] = [' '.join(sendList[0:2])]	#sendList[::1] = [' '.join(sendList[::])]
+	print(sendList)
+	#reversedList = sendList[::-1]
 	#print(reversedList)
-	correctList = ' '.join(reversedList)
-	print(correctList)
+	#correctList = ' '.join(reversedList)
+	#print(correctList)
 	
     
 
