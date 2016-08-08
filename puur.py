@@ -26,15 +26,14 @@ mainwindow.setCentralWidget(container)
 mainwindow.show()
 
 
-def convert_handler(convert):
+def convert_handler():
 	value = textedit2.toPlainText()
 	#print(value)
 	sendList = value.split()
-	#for index in sendList:
-	sendList[0:2] = [' '.join(sendList[0:2])]	#sendList[::1] = [' '.join(sendList[::])]
-	print(sendList)
-	#reversedList = sendList[::-1]
-	#print(reversedList)
+	sendList = [sendList[i] + ' ' + sendList[i+1] for i in range(0, len(sendList), 2)]
+	#print(sendList)
+	reversedList = sendList[::-1]
+	print(reversedList)
 	#correctList = ' '.join(reversedList)
 	#print(correctList)
 	
