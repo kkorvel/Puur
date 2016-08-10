@@ -4,6 +4,7 @@ import sys
 from PyQt4.QtGui import QApplication, QMainWindow, QPushButton,QVBoxLayout, QWidget, QTextEdit
 app = QApplication([])
 button_convert = QPushButton("Convert order")
+#button_result = QPushButton("See my magical result!")
 mainwindow = QMainWindow()
 mainwindow.setWindowTitle("Puuri koordinaadid")
 
@@ -18,6 +19,7 @@ vbox.addWidget(textedit)
 vbox.addWidget(textedit2)
 vbox.addWidget(textedit3)
 vbox.addWidget(button_convert)
+#vbox.addWidget(button_result)
 
 # This is some silly Qt-ism
 container = QWidget()
@@ -33,14 +35,28 @@ def convert_handler():
 	sendList = [sendList[i] + ' ' + sendList[i+1] for i in range(0, len(sendList), 2)]
 	#print(sendList)
 	reversedList = sendList[::-1]
-	print(reversedList)
-	#correctList = ' '.join(reversedList)
-	#print(correctList)
+	#print(reversedList)
+	secondpartvalue = ' '.join(reversedList)
+	#print(secondpartvalue)
+	firstpartvalue = textedit.toPlainText()
+	#print(firstpartvalue)
+	finalresult = firstpartvalue + secondpartvalue
+	print (finalresult)
+
+
+	
+#def result_handler():
+	#firstpartvalue = textedit.toPlainText()
+	#print (firstpartvalue)
+	#finalresult = firstpartvalue + reversedList
+	#print (finalresult)
+	
 	
     
 
 
 button_convert.clicked.connect(convert_handler)
+#button_result.clicked.connect(result_handler)
 
 
 sys.exit(app.exec_()) # This is basically infinite loop here, it blocks everything else!
