@@ -6,14 +6,15 @@ app = QApplication([])
 button_convert = QPushButton("Convert order")
 #button_result = QPushButton("See my magical result!")
 mainwindow = QMainWindow()
-mainwindow.setWindowTitle("Puuri koordinaadid")
+mainwindow.resize(230,400)
+mainwindow.setWindowTitle("Puuri abi")
 
 vbox = QVBoxLayout()
 vbox.addStretch(1)
 
 textedit = QTextEdit("First part")
 textedit2 = QTextEdit("Second part")
-textedit3 = QTextEdit("Result")
+textedit3 = QTextEdit(" ")
 
 vbox.addWidget(textedit)
 vbox.addWidget(textedit2)
@@ -40,8 +41,9 @@ def convert_handler():
 	#print(secondpartvalue)
 	firstpartvalue = textedit.toPlainText()
 	#print(firstpartvalue)
-	finalresult = firstpartvalue + secondpartvalue
+	finalresult = firstpartvalue + ' ' + secondpartvalue
 	print (finalresult)
+	resultstring = textedit3.insertPlainText(finalresult)
 
 
 	
