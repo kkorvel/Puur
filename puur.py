@@ -19,9 +19,7 @@ vbox.addWidget(textedit)
 vbox.addWidget(textedit2)
 vbox.addWidget(textedit3)
 vbox.addWidget(button_convert)
-#vbox.addWidget(button_result)
 
-# This is some silly Qt-ism
 container = QWidget()
 container.setLayout(vbox)
 mainwindow.setCentralWidget(container)
