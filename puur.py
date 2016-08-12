@@ -4,7 +4,6 @@ import sys
 from PyQt4.QtGui import QApplication, QMainWindow, QPushButton,QVBoxLayout, QWidget, QTextEdit
 app = QApplication([])
 button_convert = QPushButton("Convert order")
-#button_result = QPushButton("See my magical result!")
 mainwindow = QMainWindow()
 mainwindow.resize(230,400)
 mainwindow.setWindowTitle("Puuri abi")
@@ -37,28 +36,20 @@ def convert_handler():
 	#print(sendList)
 	reversedList = sendList[::-1]
 	#print(reversedList)
-	secondpartvalue = ' '.join(reversedList)
+	secondpartvalue = '\n'.join(reversedList)
 	#print(secondpartvalue)
 	firstpartvalue = textedit.toPlainText()
 	#print(firstpartvalue)
-	finalresult = firstpartvalue + ' ' + secondpartvalue
+	finalresult = firstpartvalue + '\n' +secondpartvalue
 	print (finalresult)
 	resultstring = textedit3.insertPlainText(finalresult)
 
-
-	
-#def result_handler():
-	#firstpartvalue = textedit.toPlainText()
-	#print (firstpartvalue)
-	#finalresult = firstpartvalue + reversedList
-	#print (finalresult)
-	
 	
     
 
 
 button_convert.clicked.connect(convert_handler)
-#button_result.clicked.connect(result_handler)
+
 
 
 sys.exit(app.exec_()) # This is basically infinite loop here, it blocks everything else!
